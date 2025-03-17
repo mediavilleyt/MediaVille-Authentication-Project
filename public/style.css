@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+link[rel="icon"] {
+    color: red; /* Change this to any color */
+}
+
+body{
+    background-color: var(--var-background-color);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    main{
+        width: 30%;
+
+        background-color: var(--var-modal-background);
+
+        border-radius: 0.6em;
+
+        box-shadow: 0 0 1em 0.01em #000000;
+
+        overflow: hidden;
+
+        h1{
+            width: 100%;
+
+            text-align: center;
+
+            background-color: var(--var-primary-color);
+
+            color: white;
+
+            padding: 0.5em 0;
+        }
+
+        .error{
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            background-color: rgb(255, 251, 150);
+
+            padding: 1%;
+
+            border-radius: 0.5em;
+
+            box-shadow: 0 0 1em 0.01em #000000;
+
+            border: 0.1em solid rgb(255, 200, 0);
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            input{
+                padding: 1em;
+
+                margin: 1em;
+
+                border-radius: 0.5em;
+
+                border: none;
+
+                background-color: var(--var-input-color);
+
+                transition: background-color 0.3s;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            div{
+                width: 100%;
+                display: flex;
+
+                input{
+                    padding: 1em;
+                    margin-right: 0;
+                    
+                    border-radius: 0.5em 0 0 0.5em;
+
+                    width: 72%;
+                }
+                button{
+                    margin: 1em 0;
+
+                    width: 100%;
+
+                    color: white;
+
+                    &:nth-child(2){
+                        border: none;
+                        background-color: var(--var-input-color);
+                        color: black;
+
+                        width: 8%;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+
+                        svg{
+                            width: 40%;
+                            height: 40%;
+                        }
+                    }
+
+                    &:nth-child(3){
+                        border: none;
+                        background-color: var(--var-primary-color);
+
+                        margin-right: 1em;
+
+                        border-radius: 0 0.5em 0.5em 0;
+
+                        width: 20%;
+
+                        &:hover{
+                            filter: brightness(0.9);
+                            cursor: pointer;
+                        }
+
+                        &:active{
+                            filter: brightness(1.1);
+                        }
+                    }
+                }
+            }
+
+            input[type="submit"]{
+                background-color: var(--var-primary-color);
+
+                color: white;
+
+                cursor: pointer;
+
+                transition: background-color 0.3s;
+
+                &:hover{
+                    filter: brightness(0.9);
+                }
+
+                &:active{
+                    filter: brightness(1.1);
+                }
+            }
+        }
+
+        p{
+            text-align: center;
+
+            margin: 1em;
+
+            a{
+                color: var(--var-primary-color);
+
+                text-decoration: none;
+
+                transition: color 0.3s;
+
+                &:hover{
+                    color: var(--var-primary-color-hover);
+                }
+
+                &:active{
+                    color: var(--var-primary-color-active);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        main{
+            width: 90%;
+        }
+    }
+}

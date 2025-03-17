@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./variable.css">
+    <link rel="icon" href="" type="image/svg+xml">
+    <script src="./favi.js" defer></script>
+    <title>Authenticate Demo</title>
+</head>
+<body>
+    <header>
+        <h1>Authenticate Demo</h1>
+        <form action="/logout?_method=DELETE" method="post">
+            <button type="submit" name="logout" value="logout" class="logout" id="logout" onclick="return confirm('Are you sure you want to log out?')"> 
+                <p>Logged in as:</p>
+                <b><%= username %></b>
+            </button>
+        </form>
+    </header>
+</body>
+</html>
+
+<script>
+    const logout = document.getElementById('logout');
+    logout.addEventListener('mouseenter', () => {
+        const b = document.querySelector('b');
+        b.innerText = 'Logout';
+    });
+
+    logout.addEventListener('mouseleave', () => {
+        const b = document.querySelector('b');
+        b.innerText = '<%= username %>';
+    });
+</script>

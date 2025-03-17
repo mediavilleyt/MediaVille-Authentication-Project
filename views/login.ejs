@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./variable.css">
+    <link rel="icon" href="" type="image/svg+xml">
+    <script src="./favi.js" defer></script>
+    <title>Authenticate Demo</title>
+</head>
+
+<body>
+    <main>
+        <h1>Login</h1>
+        <% if (messages.error) { %>
+            <p class="error">
+                <%= messages.error %>.
+            </p>
+            <% } %>
+                <form action="/login" method="POST">
+                    <input type="text" id="username" name="username" placeholder="username" required>
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <p>Not registered?
+                    <a href="/register">Register now.</a>
+                </p>
+    </main>
+</body>
+</html>
+
+<script>
+    //after 5 seconds remove error message
+    setTimeout(() => {
+        const error = document.querySelector('.error');
+        if (error) {
+            error.style.transition = 'opacity 1s';
+            error.style.opacity = '0';
+            setTimeout(() => {
+                error.remove();
+            }, 1000);
+        }
+    }, 3000);
+</script>
